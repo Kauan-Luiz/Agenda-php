@@ -1,3 +1,7 @@
+<?php
+include("db/conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,6 +21,7 @@
     </header>
 
     <main>
+    <hr>
     <?php
 
         $menuop = (isset($_GET["menuop"]))?$_GET["menuop"]:"home";
@@ -26,6 +31,12 @@
                 break;           
             case 'contatos':
                 include("paginas/contatos/contatos.php");
+                break;
+            case 'inserir-contato':
+                include("paginas/contatos/inserir-contato.php");
+                break;    
+            case 'cad-contato':
+                include("paginas/contatos/cad-contato.php");
                 break;
             case 'tarefas':
                 include("paginas/tarefas/tarefas.php");
@@ -37,6 +48,8 @@
         }
         
     ?>
+    
+
     </main>
 
 </body>
