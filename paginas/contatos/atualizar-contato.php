@@ -1,10 +1,10 @@
 <header>
-    <h3>Inserir Contato</h3>
+    <h3>Atualizar Contato</h3>
 </header>
 
 <?php
 // Certifique-se de que a conexão ($conexao) foi estabelecida corretamente antes deste código.
-
+$idContato= mysqli_real_escape_string($conexao, $_POST["idContato"]);
 $nomeContato = mysqli_real_escape_string($conexao, $_POST["nomeContato"]);
 $emailContato = mysqli_real_escape_string($conexao, $_POST["emailContato"]);
 $telefoneContato = mysqli_real_escape_string($conexao, $_POST["telefoneContato"]);
@@ -13,28 +13,18 @@ $sexoContato = mysqli_real_escape_string($conexao, $_POST["sexoContato"]);
 $dataNascContato = mysqli_real_escape_string($conexao, $_POST["dataNascContato"]);
 
 // Corrigir o SQL para incluir vírgulas entre os valores
-$sql = "INSERT INTO tbcontatos (
-    nomeContato,
-    emailContato,
-    telefoneContato,
-    enderecoContato,
-    sexoContato,
-    dataNascContato
-) VALUES (
-    '{$nomeContato}', 
-    '{$emailContato}', 
-    '{$telefoneContato}', 
-    '{$enderecoContato}', 
-    '{$sexoContato}', 
-    '{$dataNascContato}'
-)";
+$sql = " UPDATE tbcontatos SET
+nomeContato = '{$nomeContato}',
+emailContato = '{$emailContato}',
+telefoneContato = '{$telefoneContato}',
+sexoContato = '{$sexoContato}',
+enderecoContato = '{$enderecoContato}',
+dataNascContato = '{$dataNascContato}'
 
-// Executar a consulta e verificar se houve erro
-$rs = mysqli_query($conexao, $sql);
+WHERE idcontato = '{$idContato}'
+";
 
-if ($rs) {
-    echo "O registro foi inserido com sucesso!";
-} else {
-    die("Erro ao executar a consulta: " . mysqli_error($conexao));
-}
-?>
+ mysqli_query($conexao,$sql) or die("erro ao executar a consulta." . mysqli_error($conexao));
+
+ echo "o registro foi atualizado com sucesso!";
+

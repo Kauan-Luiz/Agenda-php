@@ -12,18 +12,22 @@
         <input type="email" name="emailContato">
     </div>
     <div>
-        <label for="telefoneContato">telefone</label>
+        <label for="telefoneContato">Telefone</label>
         <input type="text" name="telefoneContato">
+    </div>
+    <div>
+        <label for="enderecoContato">Endereço</label>
+        <input type="text" name="enderecoContato">
     </div>
 
     <div>
-        <label for="sexoContato">sexo</label>
+        <label for="sexoContato">Sexo</label>
         <input type="text" name="sexoContato">
     </div>
 
     <div>
         <label for="dataNascContato">Data de Nascimento</label>
-        <input type="date" name="DataNascContato">
+        <input type="date" name="dataNascContato">
     </div>
     
     <div>
