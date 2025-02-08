@@ -1,7 +1,11 @@
 <header>
     <h3>Inserir Contato</h3>
 </header>
-
+<style>
+       body{
+    background-color: #ECECEC;
+}
+</style>
 <?php
 // Certifique-se de que a conexão ($conexao) foi estabelecida corretamente antes deste código.
 

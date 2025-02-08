@@ -1,7 +1,11 @@
 <header>
     <h3>Atualizar Contato</h3>
 </header>
-
+<style>
+    body{
+    background-color: #ECECEC;
+}
+</style>
 <?php
 // Certifique-se de que a conexão ($conexao) foi estabelecida corretamente antes deste código.
 $idContato= mysqli_real_escape_string($conexao, $_POST["idContato"]);
